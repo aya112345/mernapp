@@ -2,13 +2,13 @@ import { v4 as uuidv4 } from 'uuid';
 import User from '../model/user.js';
 
 
-let users = [];
+// let users = [];
 // get all users 
 export const getUsers = async(req, res) => {
 try{
-  const user= await User.find();
+  const userlist= await User.find();
   //console.log(user);
-  res.status(200).json(user);
+  res.status(200).json(userlist);
     }
     catch(error)
     {
@@ -16,13 +16,15 @@ try{
     }
 }
 
-// post user       
+// post user       add
 export const createUser = async(req, res) => {
     const user = req.body;
     const newUser =new User(user);
     try{
         await newUser.save();
         res.status(201).json(newUser)
+        console.log(res)
+
     }
     catch(error){
         res.status(409).json({message:error.message});

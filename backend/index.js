@@ -1,5 +1,7 @@
 import express from 'express';
 
+import cors from 'cors';
+
 import bodyParser from 'body-parser';
 
 import mongoose from 'mongoose';
@@ -10,7 +12,7 @@ import usersRoutes from './routes/users.js';
 
 const app = express();
 
-const PORT = 5000;
+const PORT = 8000;
 
 
 const URL = 'mongodb+srv://eyalabidi:ayoutalol@app.6vw7jkg.mongodb.net/'
@@ -21,8 +23,11 @@ mongoose.connect(URL, { useNewUrlParser: true, useUnifiedTopology: true })
 
 app.use(bodyParser.json());
 
+// middelware
+app.use(cors());
+
 // import routes 
-app.use('/users',usersRoutes)
+app.use('/users',usersRoutes);
 
 app.get('/',  (req, res) => {
 // console.log('[TEST]!');
