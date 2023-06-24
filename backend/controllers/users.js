@@ -16,7 +16,7 @@ try{
     }
 }
 
-// post user       add
+// post user       add  
 export const createUser = async(req, res) => {
     const user = req.body;
     const newUser =new User(user);
@@ -55,7 +55,7 @@ export const deleteUser = async(req, res) => {
         res.status(200).json(user);
     }
     catch(error)
-    {
+    {  
         res.status(404).json({message:error.message});
     }
 }

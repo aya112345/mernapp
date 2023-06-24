@@ -13,9 +13,7 @@ import usersRoutes from './routes/users.js';
 const app = express();
 
 const PORT = 8000;
-
-
-const URL = 'mongodb+srv://eyalabidi:ayoutalol@app.6vw7jkg.mongodb.net/'
+const URL= 'mongodb+srv://eyalabidi:ayoutalol@app.6vw7jkg.mongodb.net/'
 
 mongoose.connect(URL, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => PORT, () => console.log(`database is connected`))

@@ -11,6 +11,7 @@ import Store from './JS/store/store';
 
 // import css bootstrap 
 import 'bootstrap/dist/css/bootstrap.min.css';
+
 import './index.css';
 
 ReactDOM.render(

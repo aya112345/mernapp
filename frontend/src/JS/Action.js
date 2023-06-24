@@ -30,6 +30,7 @@ export const deleteUser=()=>{
 export const addUser=()=>{
     return{
         type:ADD_USER
+    
     }
 }
 export const updateUser=()=>{
@@ -52,6 +53,7 @@ export const FetchUserList=()=>{
       //setTimeout(() => {
         axios.get('http://localhost:8000/users').then(res=>{
             const userlist=res.data;
+            console.log(userlist)
             dispatch(geUserList(userlist));
           }).catch(err=>{
             dispatch(failRequest(err.message))
@@ -82,6 +84,7 @@ export const FunctionAddUser=(data)=>{
         axios.post('http://localhost:8000/users',data).then(res=>{
             dispatch(addUser());
             toast.success('User Added successfully.')
+            console.log(data)
           }).catch(err=>{
             dispatch(failRequest(err.message))
           })

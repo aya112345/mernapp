@@ -7,11 +7,12 @@ import './App.css';
 import UserListing from './components/UserListing';
 import Adduser from './components/AddUser';
 import Updateuser from './components/UpdateUser';
-
+import Landing from './components/LandingPage/LandingPage';
 // import Navbar bootstrap
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+// import store from './JS/store'
 
 
 function App () {
@@ -38,9 +39,9 @@ function App () {
        </Container>
        </Navbar>
        </div>
-       
         <Routes>
-            <Route path='/user' element={<UserListing/>}></Route>
+              <Route path='/' element={<Landing/>}></Route>
+              <Route path='/user' element={<UserListing/>}></Route>
               <Route path='/user/add' element={<Adduser/>}></Route>
               <Route path='/user/edit/:code' element={<Updateuser/>}></Route>
         </Routes>
